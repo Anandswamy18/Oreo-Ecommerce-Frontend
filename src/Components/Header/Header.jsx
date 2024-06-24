@@ -29,10 +29,10 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className='tracking-in-expand'>
       <nav className='nav-header'>
 
-        <div className='logo'>
+        <div className='text-focus-in'>
           <img src={Logo} alt="" height={35} />
           <span className='logoName'>OREO</span>
         </div>
