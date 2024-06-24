@@ -36,15 +36,12 @@ const Header = () => {
           <img src={Logo} alt="" height={35} />
           <span className='logoName'>OREO</span>
         </div>
-
-
         {window.innerWidth < 425 && (
           <>
             <MenuIcon className='menuButton' onClick={handleMenuOpen}>
 
             </MenuIcon>
             <Menu
-
               anchorEl={anchorEl}
               open={menuOpen}
               onClose={handleMenuClose}
@@ -65,8 +62,6 @@ const Header = () => {
             </Menu>
           </>
         )}
-
-
         {window.innerWidth >= 425 && (
           <div className='Icons-box'>
             <CompareArrowsIcon className='otherIcons' />

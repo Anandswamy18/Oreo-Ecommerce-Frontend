@@ -22,6 +22,7 @@
     display: flex;
     gap: 20px;
     width: auto;
+    cursor: pointer;
 }
 
 .searchBar {
@@ -46,6 +47,7 @@
 
 .otherIcons{
   color: white;
+  cursor: pointer;
 
 }
 

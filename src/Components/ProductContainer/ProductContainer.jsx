@@ -15,9 +15,8 @@ const ProductContainer = () => {
   }, []);
 
   const handleProductClick = (index) => {
-    setSelectedProductIndex(index);
+    setSelectedProductIndex(index === selectedProductIndex ? null : index);
   };
-
 
   return (
     <div className='body'>
@@ -25,20 +24,18 @@ const ProductContainer = () => {
         {products.map((product, index) => (
           <div
             key={index}
-            className={`product-item ${selectedProductIndex === index ? 'product-item-selected' : ' '}`}
+            className="product-item"
             onClick={() => handleProductClick(index)}
           >
-           
-            <div className='ima-div'>
+            <div className={`ima-div ${selectedProductIndex === index ? 'ima-div-selected' : ''}`}>
               <img src={product.product_img} alt={product.product_name} className='image' />
-            </div>
-            {selectedProductIndex === index && (
-              <div className="product-details"  >
+              {selectedProductIndex === index && (
+                <div className="product-details">
                   <div className='Plus'><AddRoundedIcon style={{ color: 'white' }} /></div> 
-                 <div className='Shopping'><ShoppingCartRoundedIcon style={{ color: 'white' }} /></div> 
-               
-              </div>
-            )}
+                  <div className='Shopping'><ShoppingCartRoundedIcon style={{ color: 'white' }} /></div> 
+                </div>
+              )}
+            </div>
             <h2>{product.product_name}</h2>
             <div className='price-block'>
               <p> ${product.actual_price}</p>

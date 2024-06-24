@@ -1,160 +1,118 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.body{
+.body {
   background-color: rgb(238, 238, 238);
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 75px;
-    align-items: center;
-    justify-content: center;
-    position: relative; 
-    z-index: 2; 
-    object-fit: contain;
-    top: -70px;
-  }
-  
-  .product-item {
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
-    height: 350px;
-    width: 280px;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product-item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover; /* Ensure the image covers the container */
-  }
-  
-  .product-item h2 {
-    margin: 20px 0 4px;
-    font-size: 1.2em;
-    color: rgb(69, 82, 91);
-    font-weight: 200;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  
-  .product-item p {
-    margin: 0;
-    font-size: 1em;
-  }
-  
-  .ima-div {
-    display: flex;
-    height: 250px;
-    width: 250px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    background-color: rgb(237, 240, 243);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  
-  
-
-  .price-block{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-
-    .dis-price{
-        color: red;
-    }
-  }
-
-  .product-item h2 {
-    margin: 20px 0 4px;
-    font-size: 1.2em;
-    color: rgb(69, 82, 91);
-    font-weight: 200;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  
-  .product-item p {
-    margin: 0;
-    font-size: 1em;
-  }
-  
-  .ima-div {
-    display: flex;
-    height: 250px;
-    width: 250px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    background-color: rgb(237, 240, 243);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-
-  .price-block{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-
-    .dis-price{
-        color: red;
-    }
-  } 
-
-
-  .product-details{
-    display: flex;
-    margin-top: 20px;
-    width: fit-content;
-    gap: 8px;
-    cursor: pointer;
-
-    .Shopping{
-       
-        height: 30px;
-        background-color: #6177f3;
-        width: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 3px;
-    }
-
-    .Plus{
-        
-       
-        height: 30px;
-        background-color: #6177f3;
-        width: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 3px;
-        
-    }
-  }
-
-
-  @media only screen and  (min-width: 320px) and (max-width: 424px)
-{
-  .container{
-    gap:30px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 75px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  object-fit: contain;
+  top: -70px;
 }
 
-  
+.product-item {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  height: 350px;
+  width: 280px;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Ensure the image covers the container */
+  transition: transform 0.3s ease;
+}
+
+.product-item h2 {
+  margin: 20px 0 4px;
+  font-size: 1.2em;
+  color: rgb(69, 82, 91);
+  font-weight: 200;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.product-item p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.ima-div {
+  display: flex;
+  height: 250px;
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgb(237, 240, 243);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-block {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.price-block .dis-price {
+  color: red;
+}
+
+.product-details {
+  display: flex;
+  width: fit-content;
+  gap: 8px;
+  cursor: pointer;
+  position: absolute;
+  bottom: -30px; /* Position below the image */
+  left: 50%;
+  transform: translate(-50%, 50%);
+  transition: transform 0.3s ease;
+}
+
+.product-details .Shopping,
+.product-details .Plus {
+  height: 30px;
+  background-color: #6177f3;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.ima-div-selected {
+  transform: translateY(-30px); /* Move the image up */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-item-selected .product-details {
+  transform: translate(-50%, -30px); /* Adjust position of icons */
+}
+
+@media only screen and (min-width: 320px) and (max-width: 424px) {
+  .container {
+    gap: 30px;
+  }
+}
