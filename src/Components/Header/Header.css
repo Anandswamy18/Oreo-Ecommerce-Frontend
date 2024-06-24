@@ -1,0 +1,223 @@
+
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-header {
+    height: 70px;
+    background-color: #8c99e0;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.9); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.nav-power {
+    display: flex;
+    gap: 20px;
+    width: auto;
+}
+
+.searchBar {
+     
+    
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 350px;
+    width: 250px;
+    height: 45px;
+    background-color: white;
+    padding-left: 15px;
+    border-radius: 50px;
+
+     
+
+
+   
+    
+}
+
+.otherIcons{
+  color: white;
+
+}
+
+.menuButton{
+   color: white;
+   position: relative;
+   left: px;
+}
+
+
+
+.Icons-box {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: white;
+     position: relative;
+     right: 180px;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-size: 25px;
+    font-weight: 100;
+    margin-left: 70px;
+}
+
+.logo .logoName {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+@media only screen and (min-width:1024px) and (max-width: 1440px) {
+    .logo {
+        font-size: 30px;
+    }
+
+  .searchBar{
+   position: relative;
+   right: 10px;
+  }
+
+    .Icons-box {
+        gap: 30px;  
+        position: relative;
+   right: 10px;
+    }
+
+    .nav-power {
+        gap: 10px;
+    }
+}
+
+
+@media only screen and (min-width:768px) and (max-width: 1024px){
+
+  .logo {
+    font-size: 20px;
+    gap: 15px;
+    margin-left: 15px;
+    
+}
+
+.searchBar {
+    position: relative;
+    left: 1px;
+}
+
+.Icons-box {
+  position: relative;
+  left: 1px;
+  gap: 30px;
+}
+
+.nav-power {
+    gap: 10px;
+}
+}
+
+
+@media only screen and (min-width:425px) and (max-width: 768px){
+
+
+  .nav-header{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .logo {
+    font-size: 18px;
+    margin-left: 0px;
+    gap: 10px;
+}
+
+.searchBar {
+    position: relative;
+    left: 18px;
+    width: 15%; 
+
+}
+
+.Icons-box {
+    position: relative;
+    left: 12px;
+    gap: 15px;
+   
+
+
+}
+
+.nav-power {
+    position: relative;
+    left: 20px;
+    gap: 20px;
+   
+}
+
+}
+
+
+
+@media only screen and  (min-width: 320px) and (max-width: 424px) {
+
+  .nav-header{
+    display: flex;
+    height: 70px;
+
+    
+  }
+
+  .logo {
+    font-size: 15px;
+    margin-left: 0px;
+    gap: 15px;
+}
+
+.searchBar {
+    position: relative;
+    left: 0px;
+    width: 35%; 
+    height: 50%;
+
+}
+
+.Icons-box {
+    position: relative;
+    left: 2px;
+    gap: 5px;
+    font-size: 10px;
+  
+    
+
+
+}
+
+
+
+
+
+.nav-power {
+    position: relative;
+    left: 10px;
+    gap:10px;
+    
+   
+}
+
+}
+  
