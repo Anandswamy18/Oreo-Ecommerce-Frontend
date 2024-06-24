@@ -20,7 +20,7 @@ const ProductContainer = () => {
 
   return (
     <div className='body'>
-      <div className="container">
+      <div className="bounce-in-top">
         {products.map((product, index) => (
           <div
             key={index}
