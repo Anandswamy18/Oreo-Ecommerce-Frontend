@@ -68,7 +68,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Oreo-Ecommerce-Using-React
-# Oreo-Ecommerce-Using-React
-# Anandswamy18-Oreo-Ecommerce-Using-React
 # Oreo-Ecommerce-Frontend
