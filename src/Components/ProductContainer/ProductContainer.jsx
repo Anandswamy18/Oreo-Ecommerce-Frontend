@@ -18,6 +18,10 @@ const ProductContainer = () => {
     setSelectedProductIndex(index === selectedProductIndex ? null : index);
   };
 
+  const handleButtonClick = (event) => {
+    event.stopPropagation();
+  };
+
   return (
     <div className='body'>
       <div className="bounce-in-top">
@@ -27,16 +31,16 @@ const ProductContainer = () => {
             className="product-item"
             onClick={() => handleProductClick(index)}
           >
-            <div className={`ima-div ${selectedProductIndex === index ? 'ima-div-selected' : ''}`}>
+            <div className={`ima-div ${selectedProductIndex === index ? 'ima-div-selected' : ''}`} onClick={() => handleProductClick(index)}>
               <img src={product.product_img} alt={product.product_name} className='image' />
               {selectedProductIndex === index && (
                 <div className="product-details">
-                  <div className='Plus'><AddRoundedIcon style={{ color: 'white' }} /></div> 
-                  <div className='Shopping'><ShoppingCartRoundedIcon style={{ color: 'white' }} /></div> 
+                  <div className='Plus' onClick={handleButtonClick}><AddRoundedIcon style={{ color: 'white' }} /></div> 
+                  <div className='Shopping' onClick={handleButtonClick}><ShoppingCartRoundedIcon style={{ color: 'white' }} /></div> 
                 </div>
               )}
             </div>
-            <h2>{product.product_name}</h2>
+            <h2 className='text-focus-in'>{product.product_name}</h2>
             <div className='price-block'>
               <p> ${product.actual_price}</p>
               <p className='dis-price'> ${product.discounted_price}</p>
