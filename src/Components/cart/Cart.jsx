@@ -6,6 +6,7 @@ import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateCartItem, removeFromCart } from '../../actions/Action';
 import { toast} from 'react-toastify';
+import './Cart.css'
 
 const Cart = () => {
   const [selectedProductIndex, setSelectedProductIndex] = useState(null);
@@ -42,25 +43,25 @@ const Cart = () => {
   };
 
   return (
-    <div className='body'>
+    <div className='cart-body'>
       <div className="bounce-in-top">
         {cart.map((product, index) => (
           <div
             key={index}
-            className="product-item"
+            className="cart-product-item"
             onClick={() => handleProductClick(index)}
           >
-            <div className={`ima-div ${selectedProductIndex === index ? 'ima-div-selected' : ''}`} onClick={() => handleProductClick(index)}>
+            <div className={`cart-ima-div ${selectedProductIndex === index ? 'cart-ima-div-selected' : ''}`} onClick={() => handleProductClick(index)}>
               <img src={product.product_img} alt={product.product_name} className='image' />
               {selectedProductIndex === index && (
-                <div className="product-details">
-                  <div className='Plus' onClick={(e) => handleAddButtonClick(e, product.index, product.quantity)}>
+                <div className="cart-product-details">
+                  <div className='cart-Plus' onClick={(e) => handleAddButtonClick(e, product.index, product.quantity)}>
                     <AddRoundedIcon style={{ color: 'white' }} />
                   </div> 
-                  <div className='Minus' onClick={(e) => handleRemoveButtonClick(e, product.index, product.quantity)}>
+                  <div className='cart-Minus' onClick={(e) => handleRemoveButtonClick(e, product.index, product.quantity)}>
                     <RemoveRoundedIcon style={{ color: 'white' }} />
                   </div> 
-                  <div className='Delete' onClick={(e) => handleRemovePermanentlyClick(e, product.index)}>
+                  <div className='cart-Delete' onClick={(e) => handleRemovePermanentlyClick(e, product.index)}>
                     <DeleteForeverRoundedIcon style={{ color: 'white' }} />
                   </div> 
                   
@@ -68,10 +69,10 @@ const Cart = () => {
               )}
             </div>
             <h2 className='text-focus-in'>{product.product_name}</h2>
-            <p>qty: {product.quantity}</p>
-            <div className='price-block'>
+            <p  className='cart-qty' style={{fontSize:"18px"}}>Qty:- {product.quantity}</p>
+            <div className='cart-price-block'>
               <p>${product.actual_price}</p>
-              <p className='dis-price'>${product.discounted_price}</p>
+              <p className='cart-dis-price'>${product.discounted_price}</p>
             </div>
           </div>
         ))}
