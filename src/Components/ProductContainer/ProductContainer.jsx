@@ -48,7 +48,7 @@ const ProductContainer = () => {
               {selectedProductIndex === index && (
                 <div className="product-details">
                   <div className='Plus' onClick={(e) => handleAddButtonClick(e, product, index)}><AddRoundedIcon style={{ color: 'white' }} /></div>
-                  <Link to="/ecommerce/cart">
+                  <Link to="/ecommerce/cart" style={{textDecoration:"none"}}>
                     <div>
                       <div className='Shopping' onClick={(e) => e.stopPropagation()}><ShoppingCartRoundedIcon style={{ color: 'white' }} /></div>
                     </div></Link>

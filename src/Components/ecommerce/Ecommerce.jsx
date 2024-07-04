@@ -12,7 +12,7 @@ const Cart = () => {
   useEffect(() => {
     const currentPath = location.pathname;
 
-    switch (currentPath) {
+    switch (currentPath) {  
       case '/':
         setPageTitle('Home');
         break;
