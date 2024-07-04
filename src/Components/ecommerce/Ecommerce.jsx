@@ -13,11 +13,11 @@ const Cart = () => {
   const handleClick = (index) => {
     setActiveIndex(index);
   };
-
+ 
   return (
     <>
       <nav className='title-header'>
-     
+        
         <div className='header-content'>
         <h1 className='product'>Product</h1>
         <p className='welcome'>Welcome to Oreo</p>

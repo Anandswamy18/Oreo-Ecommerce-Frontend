@@ -3,7 +3,7 @@ import React from 'react'
 import Oreo from './Components/Oreo/Oreo';
 import Ecommerce from './Components/ecommerce/Ecommerce'
 import ProductContainer from './Components/ProductContainer/ProductContainer';
-
+import Cart from "./Components/cart/Cart";
 const RoutingModule = () => {
 
     const route= createBrowserRouter([
@@ -18,6 +18,10 @@ const RoutingModule = () => {
                         {
                             path:'product',
                             element:<ProductContainer/>
+                        },
+                        {
+                            path:'cart',
+                            element:<Cart/>
                         }
                     ]
                 }

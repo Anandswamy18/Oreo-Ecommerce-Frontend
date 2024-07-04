@@ -2,10 +2,18 @@ import React, { useEffect, useState } from 'react';
 import './ProductContainer.css'; 
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../actions/Action';
+import { toast } from 'react-toastify';
+
 
 const ProductContainer = () => {
   const [products, setProducts] = useState([]);
   const [selectedProductIndex, setSelectedProductIndex] = useState(null);
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
+
+  console.log('Current Cart State:', cart);
 
   useEffect(() => {
     fetch('/productDetails.json')
@@ -18,8 +26,10 @@ const ProductContainer = () => {
     setSelectedProductIndex(index === selectedProductIndex ? null : index);
   };
 
-  const handleButtonClick = (event) => {
+  const handleAddButtonClick = (event, product, index) => {
     event.stopPropagation();
+    dispatch(addToCart(product, index));
+    toast.success("your product added to cart successfully!",{ position: 'top-center' })
   };
 
   return (
@@ -35,8 +45,8 @@ const ProductContainer = () => {
               <img src={product.product_img} alt={product.product_name} className='image' />
               {selectedProductIndex === index && (
                 <div className="product-details">
-                  <div className='Plus' onClick={handleButtonClick}><AddRoundedIcon style={{ color: 'white' }} /></div> 
-                  <div className='Shopping' onClick={handleButtonClick}><ShoppingCartRoundedIcon style={{ color: 'white' }} /></div> 
+                  <div className='Plus' onClick={(e) => handleAddButtonClick(e, product, index)}><AddRoundedIcon style={{ color: 'white' }} /></div> 
+                  <div className='Shopping' onClick={(e) => e.stopPropagation()}><ShoppingCartRoundedIcon style={{ color: 'white' }} /></div> 
                 </div>
               )}
             </div>

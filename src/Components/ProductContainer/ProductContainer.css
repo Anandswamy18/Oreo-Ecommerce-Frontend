@@ -108,7 +108,11 @@
 }
 
 .product-details .Shopping,
-.product-details .Plus {
+.product-details .Plus,
+.product-details .Minus,
+.product-details .Delete
+{
+
   height: 30px;
   background-color: #6177f3;
   width: 40px;
