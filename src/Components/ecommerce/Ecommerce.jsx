@@ -11,10 +11,10 @@ const Cart = () => {
 
   useEffect(() => {
     const currentPath = location.pathname;
-
+    
     switch (currentPath) {  
-      case '/':
-        setPageTitle('Home');
+      case '/ecommerce':
+        setPageTitle('Oreo');
         break;
       case '/ecommerce/cart':
         setPageTitle('Cart');
@@ -30,7 +30,7 @@ const Cart = () => {
 
 
   const breadcrumbItems = [
-    { text: "Oreo", path: "/" },
+    { text: "Oreo", path: "/ecommerce" },
     { text: "eCommerce", path: "/ecommerce/product" },
     { text: pageTitle, path: location.pathname }
   ];
@@ -64,6 +64,7 @@ const Cart = () => {
             </span>
           ))}
         </div>
+        
       </nav>
       <Outlet/>
     </>

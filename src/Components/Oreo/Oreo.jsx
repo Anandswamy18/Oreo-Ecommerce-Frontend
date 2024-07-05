@@ -5,7 +5,6 @@ const Oreo = () => {
   return (
     <div>
     <Header/>
-     
     <Outlet/>
     </div>
   )

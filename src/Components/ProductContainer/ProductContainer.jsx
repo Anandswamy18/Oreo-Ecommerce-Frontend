@@ -57,7 +57,7 @@ const ProductContainer = () => {
                 </div>
               )}
             </div>
-            <h2 className='text-focus-in'>{product.product_name}</h2>
+            <h2 className='text-focus-in'style={{color:"black"}}>{product.product_name}</h2>
             <div className='price-block'>
               <p> ${product.actual_price}</p>
               <p className='dis-price'> ${product.discounted_price}</p>

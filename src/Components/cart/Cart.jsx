@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import '../ProductContainer/ProductContainer.css'; 
+import '../ProductContainer/ProductContainer.css';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateCartItem, removeFromCart } from '../../actions/Action';
-import { toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import './Cart.css'
 
 const Cart = () => {
@@ -22,24 +22,24 @@ const Cart = () => {
   const handleAddButtonClick = (event, index, quantity) => {
     event.stopPropagation();
     dispatch(updateCartItem(index, quantity + 1));
-    toast.success("your product quantity updated sucessfully!",{ position: 'top-center' })
+    toast.success("your product quantity updated sucessfully!", { position: 'top-center' })
   };
 
   const handleRemoveButtonClick = (event, index, quantity) => {
     event.stopPropagation();
     if (quantity > 1) {
       dispatch(updateCartItem(index, quantity - 1));
-      toast.success("your product quantity updated sucessfully!",{ position: 'top-center' })
+      toast.success("your product quantity updated sucessfully!", { position: 'top-center' })
     } else {
       dispatch(removeFromCart(index));
-      toast.success("your product removed from cart sucessfully!",{ position: 'top-center' })
+      toast.success("your product removed from cart sucessfully!", { position: 'top-center' })
     }
   };
 
   const handleRemovePermanentlyClick = (event, index) => {
     event.stopPropagation();
     dispatch(removeFromCart(index));
-    toast.success("your product removed from cart sucessfully!",{ position: 'top-center' })
+    toast.success("your product removed from cart sucessfully!", { position: 'top-center' })
   };
 
   return (
@@ -57,19 +57,22 @@ const Cart = () => {
                 <div className="cart-product-details">
                   <div className='cart-Plus' onClick={(e) => handleAddButtonClick(e, product.index, product.quantity)}>
                     <AddRoundedIcon style={{ color: 'white' }} />
-                  </div> 
-                  <div className='cart-Minus' onClick={(e) => handleRemoveButtonClick(e, product.index, product.quantity)}>
+                  </div>
+                  <div className='cart-Minus' style={{
+                    opacity: product.quantity === 1 ? 0.5 : 1,
+                    pointerEvents: product.quantity === 1 ? 'none' : 'auto'
+                  }} onClick={(e) => handleRemoveButtonClick(e, product.index, product.quantity)}>
                     <RemoveRoundedIcon style={{ color: 'white' }} />
-                  </div> 
+                  </div>
                   <div className='cart-Delete' onClick={(e) => handleRemovePermanentlyClick(e, product.index)}>
                     <DeleteForeverRoundedIcon style={{ color: 'white' }} />
-                  </div> 
-                  
+                  </div>
+
                 </div>
               )}
             </div>
-            <h2 className='text-focus-in'>{product.product_name}</h2>
-            <p  className='cart-qty' style={{fontSize:"18px"}}>Qty:- {product.quantity}</p>
+            <h2 className='text-focus-in' style={{ color: "black" }}>{product.product_name}</h2>
+            <p className='cart-qty' style={{ fontSize: "18px" }}>Qty:- {product.quantity}</p>
             <div className='cart-price-block'>
               <p>${product.actual_price}</p>
               <p className='cart-dis-price'>${product.discounted_price}</p>
